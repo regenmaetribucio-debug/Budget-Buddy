@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Budget Tracker</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="manifest" href="manifest.json">
+
+        <style>
+            body {
+                background-color: #ade4fe;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                text-align: center;
+                padding: 50px;
+            }
+            .budget-container {
+                background-color: #95c5ff;
+                border-radius: 30px;
+                padding: 50px;
+                margin: 20px;
+                display: inline-block;
+                box-shadow: 0 4px 8px rgba(115, 118, 255, 0.749);
+            }
+            .input#budget, .input#expense {
+                width: 100%;
+                padding: 15px;
+                margin: 10px 0;
+                border: 1px solid #7ef2ff;
+                border-radius: 5px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <h4>Welcome to Budget Buddy</h4>
+
+        <div class = "budget-container">
+            <input type = "number" id="budget" placeholder="Enter your Budget">
+            <br>
+            <br>
+            <input type = "number" id="expense" placeholder="Enter your Expenses">
+            <br>
+            <br>
+            <button type= "button" onclick = "addExpense()">Result</button>
+            <p id="result"></p>
+        </div>
+
+        <script>
+            function addExpense() {
+                const budget = document.getElementById('budget').value;
+                const expenses = document.getElementById('expense').value;
+                const result = document.getElementById('result');
+                if ( budget < expenses){
+                    result.innerHTML = "Please!! MAG SAVE KA NAMAN"
+                }
+                else {
+                    result.innerHTML = "You are good at managing your budget"
+                }
+            }
+        </script>
+    </body>
+    </html>
